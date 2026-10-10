@@ -1,0 +1,13 @@
+{
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/", "destination": "/preview/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/preview",
+      "destination": "/preview/",
+      "permanent": false
+    }
+  ]
+}
