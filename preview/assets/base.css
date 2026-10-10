@@ -448,12 +448,12 @@ p {
   overflow: hidden;
 }
 
-/* Full banner visible — match artboard, no side crop */
+/* Full banner — text lives inside the image, no HTML overlay copy */
 .hero-banner--image-only {
   min-height: 0;
   width: 100%;
   aspect-ratio: 1920 / 863;
-  background: #9ec4d6;
+  background: #f5f1ea;
 }
 
 .hero-banner__track {
@@ -491,10 +491,10 @@ p {
 }
 
 .hero-banner--image-only .hero-banner__image img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   transform: none;
-  background: #9ec4d6;
+  background: #f5f1ea;
 }
 
 .hero-banner__slide.is-active .hero-banner__image img {
@@ -506,7 +506,9 @@ p {
 }
 
 .hero-banner--image-only .hero-banner__veil,
-.hero-banner--image-only .hero-banner__content {
+.hero-banner--image-only .hero-banner__content,
+.hero-banner--image-only .hero-banner__shop,
+.hero-banner--image-only .hero-banner__controls {
   display: none !important;
 }
 
@@ -521,18 +523,10 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-.hero-banner--image-only .hero-banner__controls {
-  left: auto;
-  right: clamp(1rem, 4vw, 3rem);
-  bottom: 1.35rem;
-  transform: none;
-}
-
-@media (max-width: 720px) {
-  .hero-banner__shop,
-  .hero-banner__controls {
-    display: none !important;
-  }
+.hero-banner--image-only .hero-banner__link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
 }
 
 .hero-banner__copy {
