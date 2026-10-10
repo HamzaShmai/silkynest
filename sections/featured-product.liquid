@@ -42,7 +42,7 @@
             >
           {%- else -%}
             <img
-              src="{{ 'silky-nest-product.png' | asset_url }}"
+              src="{{ 'silky-nest-product-real.png' | asset_url }}"
               alt="Silky Nest Hair Oil"
               width="800"
               height="800"
@@ -67,8 +67,8 @@
               </button>
             {%- endfor -%}
           {%- else -%}
-            {%- assign fallbacks = 'silky-nest-product.png,silky-nest-box-side.png,banner-sea-2.jpg' | split: ',' -%}
-            {%- assign labels = 'Product,Benefits,Bottle' | split: ',' -%}
+            {%- assign fallbacks = 'silky-nest-product-real.png,silky-nest-box-real.png,silky-nest-benefits-side.jpg,image-4.jpg' | split: ',' -%}
+            {%- assign labels = 'Product,Box,Benefits,Banner' | split: ',' -%}
             {%- for asset in fallbacks -%}
               <button
                 type="button"

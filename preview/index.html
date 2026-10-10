@@ -89,6 +89,7 @@
               <button type="button" class="product-gallery__thumb is-active" data-gallery-thumb data-full="assets/silky-nest-product-real.png" data-alt="Product"><img src="assets/silky-nest-product-real.png" alt=""></button>
               <button type="button" class="product-gallery__thumb" data-gallery-thumb data-full="assets/silky-nest-box-real.png" data-alt="Box"><img src="assets/silky-nest-box-real.png" alt=""></button>
               <button type="button" class="product-gallery__thumb" data-gallery-thumb data-full="assets/silky-nest-benefits-side.jpg" data-alt="Benefits"><img src="assets/silky-nest-benefits-side.jpg" alt=""></button>
+              <button type="button" class="product-gallery__thumb" data-gallery-thumb data-full="assets/image-4.jpg" data-alt="Banner"><img src="assets/image-4.jpg" alt=""></button>
             </div>
           </div>
 
@@ -193,24 +194,58 @@
             </div>
             <div class="reviews-nav">
               <button type="button" class="reviews-nav__btn" data-review-prev aria-label="Previous review"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5"/></svg></button>
-              <span class="reviews-nav__count" data-review-count>01 / 03</span>
+              <span class="reviews-nav__count" data-review-count>01 / 06</span>
               <button type="button" class="reviews-nav__btn" data-review-next aria-label="Next review"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg></button>
             </div>
           </aside>
           <div class="reviews-stage">
-            <article class="review-card is-active" data-review-slide>
-              <p class="review-card__quote">“After using Silky Nest consistently, my hair feels much softer and healthier. I also noticed less hair fall while combing.”</p>
-              <div class="review-card__meta"><strong>Ayesha</strong><span>Lahore</span></div>
-            </article>
-            <article class="review-card" data-review-slide>
-              <p class="review-card__quote">“This oil made my hair look fuller and shinier. The fragrance is pleasant and it doesn’t feel overly greasy.”</p>
-              <div class="review-card__meta"><strong>Fatima</strong><span>Karachi</span></div>
-            </article>
-            <article class="review-card" data-review-slide>
-              <p class="review-card__quote">“Within a few weeks my hair became much easier to manage and looked healthier. Highly recommended.”</p>
-              <div class="review-card__meta"><strong>Hira</strong><span>Rawalpindi</span></div>
-            </article>
+            <div class="reviews-stage__mark" aria-hidden="true">“</div>
+            <div class="reviews-slider" data-review-slider>
+              <article class="reviews-slide is-active" data-review-slide>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">After using Silky Nest consistently, my hair feels much softer and healthier. I also noticed less hair fall while combing.</blockquote>
+                <div class="reviews-slide__author"><strong>Ayesha</strong><span>Lahore</span></div>
+              </article>
+              <article class="reviews-slide" data-review-slide hidden>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">This oil made my hair look fuller and shinier. The fragrance is pleasant and it doesn’t feel overly greasy.</blockquote>
+                <div class="reviews-slide__author"><strong>Fatima</strong><span>Karachi</span></div>
+              </article>
+              <article class="reviews-slide" data-review-slide hidden>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">I've tried many oils before, but this one doesn't feel sticky. My scalp feels nourished after every use.</blockquote>
+                <div class="reviews-slide__author"><strong>Sana</strong><span>Islamabad</span></div>
+              </article>
+              <article class="reviews-slide" data-review-slide hidden>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">Within a few weeks my hair became much easier to manage and looked healthier. Highly recommended.</blockquote>
+                <div class="reviews-slide__author"><strong>Hira</strong><span>Rawalpindi</span></div>
+              </article>
+              <article class="reviews-slide" data-review-slide hidden>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">I love that it's made with natural ingredients. My hair feels stronger and has a beautiful shine.</blockquote>
+                <div class="reviews-slide__author"><strong>Mahnoor</strong><span>Faisalabad</span></div>
+              </article>
+              <article class="reviews-slide" data-review-slide hidden>
+                <div class="reviews-slide__stars">★★★★★</div>
+                <blockquote class="reviews-slide__quote">The packaging is premium and the oil absorbs nicely. My hair doesn't feel dry anymore.</blockquote>
+                <div class="reviews-slide__author"><strong>Iqra</strong><span>Multan</span></div>
+              </article>
+            </div>
+            <div class="reviews-cities" aria-label="Customer cities">
+              <button type="button" class="reviews-cities__item is-active" data-review-dot>Lahore</button>
+              <button type="button" class="reviews-cities__item" data-review-dot>Karachi</button>
+              <button type="button" class="reviews-cities__item" data-review-dot>Islamabad</button>
+              <button type="button" class="reviews-cities__item" data-review-dot>Rawalpindi</button>
+              <button type="button" class="reviews-cities__item" data-review-dot>Faisalabad</button>
+              <button type="button" class="reviews-cities__item" data-review-dot>Multan</button>
+            </div>
           </div>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee__item reveal"><h3>100% Natural</h3><p>Premium herbal oils for healthier-looking hair.</p></div>
+          <div class="guarantee__item reveal"><h3>Fast Delivery</h3><p>Cash on Delivery available all over Pakistan.</p></div>
+          <div class="guarantee__item reveal"><h3>Secure Checkout</h3><p>Your payment and personal information are protected.</p></div>
         </div>
       </div>
     </section>
