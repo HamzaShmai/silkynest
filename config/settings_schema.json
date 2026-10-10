@@ -1,0 +1,112 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Silky Nest Luxury",
+    "theme_version": "1.0.0",
+    "theme_author": "Silky Nest",
+    "theme_documentation_url": "https://silkynest.store",
+    "theme_support_url": "https://silkynest.store"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 60,
+        "max": 220,
+        "step": 10,
+        "unit": "px",
+        "label": "Logo width",
+        "default": 140
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#FFFEFC"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#161412"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Gold / CTA",
+        "default": "#D4B45A"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_hover",
+        "label": "Gold hover",
+        "default": "#C4A14A"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Muted text",
+        "default": "#6F6A63"
+      },
+      {
+        "type": "color",
+        "id": "color_soft",
+        "label": "Soft surface",
+        "default": "#F7F4EE"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured product"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sticky_atc",
+        "label": "Enable sticky Add to Cart",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      }
+    ]
+  }
+]

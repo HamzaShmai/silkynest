@@ -1,0 +1,99 @@
+<section class="section section--soft" id="gallery">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section__title">{{ section.settings.heading }}</h2>
+      <p class="section__lead">{{ section.settings.lead }}</p>
+    </div>
+
+    <div class="lifestyle-grid">
+      {%- for block in section.blocks -%}
+        <figure
+          class="lifestyle-grid__item{% if forloop.first %} lifestyle-grid__item--large{% endif %} reveal"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'lazy',
+                widths: '600, 900, 1200, 1400',
+                sizes: '(min-width: 980px) 50vw, 100vw',
+                alt: block.settings.caption
+            }}
+          {%- else -%}
+            {%- assign asset = block.settings.fallback_asset | default: 'silky-nest-front.jpg' -%}
+            <img src="{{ asset | asset_url }}" alt="{{ block.settings.caption | escape }}" width="1000" height="800" loading="lazy">
+          {%- endif -%}
+          {%- if block.settings.caption != blank -%}
+            <figcaption class="lifestyle-grid__caption">{{ block.settings.caption }}</figcaption>
+          {%- endif -%}
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lifestyle gallery",
+  "tag": "section",
+  "class": "section-lifestyle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "In Frame"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Beauty, distilled"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Premium product and lifestyle photography that captures the softness, shine, and ritual of Silky Nest."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Lifestyle"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback asset",
+          "default": "silky-nest-front.jpg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lifestyle gallery",
+      "blocks": [
+        { "type": "image", "settings": { "caption": "The bottle", "fallback_asset": "silky-nest-front.jpg" } },
+        { "type": "image", "settings": { "caption": "Packaging", "fallback_asset": "silky-nest-packaging.jpg" } },
+        { "type": "image", "settings": { "caption": "The ritual", "fallback_asset": "silky-nest-ingredients-lifestyle.jpg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

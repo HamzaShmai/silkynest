@@ -1,0 +1,47 @@
+{%- if settings.enable_sticky_atc -%}
+  {%- liquid
+    assign product = settings.featured_product
+    if product == blank
+      assign product = all_products['silky-nest-hair-oil-your-hairs-secret-treasure']
+    endif
+    if product == blank
+      assign product = collections.all.products.first
+    endif
+    assign current_variant = product.selected_or_first_available_variant
+  -%}
+
+  {%- if product != blank -%}
+    <div class="sticky-atc" data-sticky-atc>
+      <div class="container sticky-atc__inner">
+        <div class="sticky-atc__product">
+          {%- if product.featured_media -%}
+            <img src="{{ product.featured_media | image_url: width: 120 }}" alt="{{ product.title | escape }}" width="52" height="52" loading="lazy">
+          {%- else -%}
+            <img src="{{ 'silky-nest-front.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="52" height="52" loading="lazy">
+          {%- endif -%}
+          <div>
+            <div class="sticky-atc__title">{{ product.title }}</div>
+            <div class="sticky-atc__price">{{ current_variant.price | money }}</div>
+          </div>
+        </div>
+
+        <div class="sticky-atc__actions">
+          {%- form 'product', product, data-product-form: true -%}
+            <input type="hidden" name="id" value="{{ current_variant.id }}">
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="btn btn--gold" {% unless current_variant.available %}disabled{% endunless %}>
+              {%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+            </button>
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sticky Add to Cart",
+  "settings": []
+}
+{% endschema %}

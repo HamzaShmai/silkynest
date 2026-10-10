@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "featured-product",
+      "settings": {
+        "eyebrow": "Silky Nest",
+        "heading": "Your hair's secret treasure",
+        "lead": "A luxurious natural oil ritual for stronger, softer, shinier hair."
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "leaf", "title": "Natural Ingredients", "text": "Made with premium herbal oils for healthy, nourished hair." } },
+        "b2": { "type": "benefit", "settings": { "icon": "shield", "title": "Reduces Hair Fall", "text": "Helps strengthen roots and minimize breakage with regular use." } },
+        "b3": { "type": "benefit", "settings": { "icon": "drop", "title": "Deep Nourishment", "text": "Hydrates the scalp and restores dry, damaged-looking hair." } },
+        "i1": { "type": "ingredient", "settings": { "title": "Botanical Herbs", "text": "A carefully balanced herbal blend that supports scalp comfort and hair vitality." } },
+        "i2": { "type": "ingredient", "settings": { "title": "Nourishing Seeds", "text": "Seed oils rich in nutrients that help restore softness and resilience." } },
+        "i3": { "type": "ingredient", "settings": { "title": "Premium Oils", "text": "A luxurious oil base designed to hydrate deeply and enhance natural shine." } }
+      },
+      "block_order": ["b1", "b2", "b3", "i1", "i2", "i3"],
+      "settings": {
+        "show_compare": true,
+        "ingredients_heading": "Botanicals in every drop"
+      }
+    },
+    "how_to_use": {
+      "type": "how-to-use",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Massage in", "text": "Warm a small amount between your palms and massage into the scalp." } },
+        "s2": { "type": "step", "settings": { "title": "Let it nourish", "text": "Leave on for 1–2 hours or overnight for deeper restoration." } },
+        "s3": { "type": "step", "settings": { "title": "Rinse & glow", "text": "Wash with a mild shampoo. Repeat 2–3 times a week." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "quote": "My hair feels much softer and healthier. I also noticed less hair fall while combing.", "name": "Ayesha", "location": "Lahore", "rating": 5 } },
+        "r2": { "type": "review", "settings": { "quote": "This oil made my hair look fuller and shinier. The fragrance is also very pleasant.", "name": "Fatima", "location": "Karachi", "rating": 5 } },
+        "r3": { "type": "review", "settings": { "quote": "It doesn't feel overly greasy. My scalp feels nourished after every use.", "name": "Sana", "location": "Islamabad", "rating": 5 } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "f1": { "type": "question", "settings": { "question": "How do I use Silky Nest Hair Oil?", "answer": "Massage into scalp, leave 1–2 hours or overnight, then wash with mild shampoo. Use 2–3 times a week." } },
+        "f2": { "type": "question", "settings": { "question": "Is it suitable for all hair types?", "answer": "Yes — for men and women, including straight, wavy, curly, and chemically treated hair." } }
+      },
+      "block_order": ["f1", "f2"]
+    }
+  },
+  "order": ["main", "benefits", "how_to_use", "reviews", "faq"]
+}

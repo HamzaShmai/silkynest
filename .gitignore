@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+_restore_tmp/
+*.log
+node_modules/
+.shopify/
+.idea/
+.vscode/

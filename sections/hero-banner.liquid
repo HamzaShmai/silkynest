@@ -1,0 +1,157 @@
+<section class="hero hero--banner" data-hero-banner>
+  {%- if section.settings.show_trust_bar -%}
+    <div class="hero-trust">
+      <div class="hero-trust__track">
+        <span>100% Natural</span>
+        <span>Cash on Delivery</span>
+        <span>Free Delivery Across Pakistan</span>
+        <span>Visible Shine</span>
+        <span>Non-Sticky Formula</span>
+        <span>100% Natural</span>
+        <span>Cash on Delivery</span>
+        <span>Free Delivery Across Pakistan</span>
+        <span>Visible Shine</span>
+        <span>Non-Sticky Formula</span>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="hero-banner hero-banner--image-only" data-hero-slider>
+    <div class="hero-banner__track" data-slider-track>
+      {%- for block in section.blocks -%}
+        <div
+          class="hero-banner__slide{% if forloop.first %} is-active{% endif %}"
+          data-slider-slide
+          data-label="{{ block.settings.label | escape }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="hero-banner__image">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 2400 }}"
+                srcset="{{ block.settings.image | image_url: width: 900 }} 900w, {{ block.settings.image | image_url: width: 1400 }} 1400w, {{ block.settings.image | image_url: width: 2000 }} 2000w, {{ block.settings.image | image_url: width: 2400 }} 2400w"
+                sizes="100vw"
+                alt="{{ block.settings.label | default: shop.name | escape }}"
+                width="1920"
+                height="863"
+                {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}
+              >
+            {%- else -%}
+              {%- assign asset_name = block.settings.fallback_asset | default: 'banner-sea-1.jpg' -%}
+              <img
+                src="{{ asset_name | asset_url }}"
+                alt="{{ block.settings.label | default: shop.name | escape }}"
+                width="1920"
+                height="863"
+                {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}
+              >
+            {%- endif -%}
+          </div>
+        </div>
+      {%- else -%}
+        <div class="hero-banner__slide is-active" data-slider-slide data-label="Beach Hero">
+          <div class="hero-banner__image">
+            <img src="{{ 'banner-sea-1.jpg' | asset_url }}" alt="Silky Nest Hair Oil" width="1920" height="863" loading="eager">
+          </div>
+        </div>
+        <div class="hero-banner__slide" data-slider-slide data-label="Bottle">
+          <div class="hero-banner__image">
+            <img src="{{ 'banner-sea-2.jpg' | asset_url }}" alt="Silky Nest Hair Oil bottle" width="1920" height="863" loading="lazy">
+          </div>
+        </div>
+        <div class="hero-banner__slide" data-slider-slide data-label="Packaging">
+          <div class="hero-banner__image">
+            <img src="{{ 'banner-sea-3.jpg' | asset_url }}" alt="Silky Nest packaging" width="1920" height="863" loading="lazy">
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <a href="{{ section.settings.button_link | default: '#shop' }}" class="hero-banner__shop btn btn--gold">
+      {{ section.settings.button_label | default: 'Shop Now' }}
+    </a>
+
+    <div class="hero-banner__controls">
+      <button type="button" class="hero-banner__arrow" data-slider-prev aria-label="Previous banner">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <div class="hero-banner__dots" role="tablist" aria-label="Banner slides">
+        {%- assign slide_count = section.blocks.size -%}
+        {%- if slide_count == 0 -%}{%- assign slide_count = 3 -%}{%- endif -%}
+        {%- for i in (1..slide_count) -%}
+          <button
+            type="button"
+            class="hero-slider__dot{% if forloop.first %} is-active{% endif %}"
+            data-slider-dot
+            aria-label="Show banner {{ forloop.index }}"
+          ></button>
+        {%- endfor -%}
+      </div>
+      <button type="button" class="hero-banner__arrow" data-slider-next aria-label="Next banner">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxury hero banner",
+  "tag": "section",
+  "class": "section-hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_trust_bar",
+      "label": "Show top trust marquee",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Shop button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Shop button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Banner slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Banner"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback theme asset",
+          "default": "banner-sea-1.jpg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxury hero banner",
+      "blocks": [
+        { "type": "slide", "settings": { "label": "Beach Hero", "fallback_asset": "banner-sea-1.jpg" } },
+        { "type": "slide", "settings": { "label": "Bottle", "fallback_asset": "banner-sea-2.jpg" } },
+        { "type": "slide", "settings": { "label": "Packaging", "fallback_asset": "banner-sea-3.jpg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

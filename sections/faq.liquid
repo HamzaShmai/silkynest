@@ -1,0 +1,128 @@
+<section class="section section--soft" id="faq">
+  <div class="container">
+    <div class="section__header section__header--center reveal">
+      <p class="section__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section__title section__title--center">{{ section.settings.heading }}</h2>
+      <p class="section__lead section__lead--center">{{ section.settings.lead }}</p>
+    </div>
+
+    <div class="faq-list reveal">
+      {%- for block in section.blocks -%}
+        <div class="faq-item{% if forloop.first and section.settings.open_first %} is-open{% endif %}" data-faq-item {{ block.shopify_attributes }}>
+          <button
+            type="button"
+            class="faq-item__question"
+            data-faq-toggle
+            aria-expanded="{% if forloop.first and section.settings.open_first %}true{% else %}false{% endif %}"
+          >
+            <span>{{ block.settings.question }}</span>
+            <span class="faq-item__icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Questions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Everything you need to know about Silky Nest Hair Oil."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question by default",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I use Silky Nest Hair Oil?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Massage a small amount into your scalp, leave on for 1–2 hours or overnight, then wash with a mild shampoo. Use 2–3 times a week."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I use Silky Nest Hair Oil?",
+            "answer": "Massage a small amount of Silky Nest Hair Oil into your scalp using your fingertips. Leave it on for at least 1–2 hours or overnight for deeper nourishment, then wash it out with a mild shampoo. For best results, use 2–3 times a week."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is Silky Nest Hair Oil suitable for everyone?",
+            "answer": "Yes. Silky Nest Hair Oil is suitable for both men and women and can be used on all hair types, including straight, wavy, curly, and chemically treated hair."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Will it make my hair greasy?",
+            "answer": "Silky Nest is formulated to nourish without a heavy, sticky feel. Use a modest amount and wash as directed for soft, manageable results."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer Cash on Delivery?",
+            "answer": "Yes. Cash on Delivery is available across Pakistan for a convenient, secure checkout experience."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "If you have any questions about your order or the product, our customer support team is ready to assist you through the contact details on our website."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

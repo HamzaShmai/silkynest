@@ -1,0 +1,201 @@
+<section class="section section--soft" id="benefits">
+  <div class="container">
+    <div class="section__header section__header--center reveal">
+      <p class="section__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section__title section__title--center">{{ section.settings.heading }}</h2>
+      <p class="section__lead section__lead--center">{{ section.settings.lead }}</p>
+    </div>
+
+    <div class="benefits-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'benefit' -%}
+          <article class="benefit-card reveal" {{ block.shopify_attributes }}>
+            <div class="benefit-card__icon" aria-hidden="true">
+              {%- case block.settings.icon -%}
+                {%- when 'leaf' -%}
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><path d="M8 28c8-2 14-8 18-18 0 12 2 20-8 26-6 3-12 0-10-8z" stroke="currentColor" stroke-width="1.4"/><path d="M14 24c4-3 8-8 10-14" stroke="currentColor" stroke-width="1.4"/></svg>
+                {%- when 'drop' -%}
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><path d="M21 6c0 0-10 12-10 20a10 10 0 0020 0C31 18 21 6 21 6z" stroke="currentColor" stroke-width="1.4"/></svg>
+                {%- when 'shine' -%}
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><path d="M21 7v5M21 30v5M7 21h5M30 21h5M11 11l3.5 3.5M27.5 27.5L31 31M31 11l-3.5 3.5M14.5 27.5L11 31" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="21" cy="21" r="5" stroke="currentColor" stroke-width="1.4"/></svg>
+                {%- when 'shield' -%}
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><path d="M21 6l12 5v9c0 8-5.5 14-12 16-6.5-2-12-8-12-16V11l12-5z" stroke="currentColor" stroke-width="1.4"/><path d="M15 21l4 4 8-8" stroke="currentColor" stroke-width="1.4"/></svg>
+                {%- else -%}
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="12" stroke="currentColor" stroke-width="1.4"/><path d="M15 21.2l3.8 3.8L27 16.5" stroke="currentColor" stroke-width="1.4"/></svg>
+              {%- endcase -%}
+            </div>
+            <h3 class="benefit-card__title">{{ block.settings.title }}</h3>
+            <p class="benefit-card__text">{{ block.settings.text }}</p>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="ingredients reveal">
+      <div class="ingredients__media">
+        {%- if section.settings.ingredients_image != blank -%}
+          {{ section.settings.ingredients_image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.ingredients_heading }}
+        {%- else -%}
+          <img src="{{ 'silky-nest-ingredients.png' | asset_url }}" alt="Key ingredients of Silky Nest Hair Oil" width="900" height="1400" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div>
+        <p class="section__eyebrow">Key Ingredients</p>
+        <h3 class="section__title" style="max-width: 14ch; margin-bottom: 1.75rem;">{{ section.settings.ingredients_heading }}</h3>
+        <div class="ingredients__list">
+          {%- assign ingredient_blocks = section.blocks | where: 'type', 'ingredient' -%}
+          {%- for block in ingredient_blocks -%}
+            <div class="ingredient-item" {{ block.shopify_attributes }}>
+              <div class="ingredient-item__num">0{{ forloop.index }}</div>
+              <div>
+                <h4 class="ingredient-item__title">{{ block.settings.title }}</h4>
+                <p class="ingredient-item__text">{{ block.settings.text }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.show_compare -%}
+      <div class="reveal" style="margin-top: clamp(3rem, 6vw, 5rem);">
+        <div class="section__header section__header--center">
+          <p class="section__eyebrow">The Difference</p>
+          <h3 class="section__title section__title--center">Why choose Silky Nest</h3>
+        </div>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Features</th>
+                <th>Silky Nest</th>
+                <th>Ordinary Oils</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Reduces Hair Fall</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Promotes Healthy Growth</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Deeply Nourishes Roots</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Suitable for All Hair Types</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Non-Sticky Formula</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Adds Natural Shine</td><td class="check">✔</td><td class="cross">✖</td></tr>
+              <tr><td>Premium Natural Ingredients</td><td class="check">✔</td><td class="cross">✖</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits & ingredients",
+  "tag": "section",
+  "class": "section-benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Why Customers Love It"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Crafted for healthier, stronger, shinier hair"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Discover why thousands are switching to Silky Nest Hair Oil for visibly softer, fuller-looking hair."
+    },
+    {
+      "type": "text",
+      "id": "ingredients_heading",
+      "label": "Ingredients heading",
+      "default": "Botanicals in every drop"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredients_image",
+      "label": "Ingredients image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_compare",
+      "label": "Show comparison table",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "drop", "label": "Drop" },
+            { "value": "shine", "label": "Shine" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Natural Ingredients"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Made with premium herbal oils for healthy, nourished hair."
+        }
+      ]
+    },
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Botanical Herbs"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "A carefully balanced herbal blend that supports scalp comfort and hair vitality."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits & ingredients",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "leaf", "title": "Natural Ingredients", "text": "Made with premium herbal oils for healthy, nourished hair." } },
+        { "type": "benefit", "settings": { "icon": "shield", "title": "Reduces Hair Fall", "text": "Helps strengthen roots and minimize breakage with regular use." } },
+        { "type": "benefit", "settings": { "icon": "drop", "title": "Deep Nourishment", "text": "Hydrates the scalp and restores dry, damaged-looking hair." } },
+        { "type": "benefit", "settings": { "icon": "shine", "title": "Natural Shine", "text": "Leaves hair visibly glossy, soft, and beautifully manageable." } },
+        { "type": "benefit", "settings": { "icon": "check", "title": "All Hair Types", "text": "Gentle enough for men and women — straight, wavy, curly, or treated." } },
+        { "type": "benefit", "settings": { "icon": "leaf", "title": "Non-Sticky Feel", "text": "A refined formula that absorbs beautifully without heavy residue." } },
+        { "type": "ingredient", "settings": { "title": "Botanical Herbs", "text": "A carefully balanced herbal blend that supports scalp comfort and hair vitality." } },
+        { "type": "ingredient", "settings": { "title": "Nourishing Seeds", "text": "Seed oils rich in nutrients that help restore softness and resilience." } },
+        { "type": "ingredient", "settings": { "title": "Premium Oils", "text": "A luxurious oil base designed to hydrate deeply and enhance natural shine." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

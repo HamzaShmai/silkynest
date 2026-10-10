@@ -1,0 +1,276 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "blocks": {
+        "slide1": {
+          "type": "slide",
+          "settings": {
+            "label": "Silky Nest Hair Oil",
+            "fallback_asset": "image-4.jpg"
+          }
+        },
+        "slide2": {
+          "type": "slide",
+          "settings": {
+            "label": "Signature Ritual",
+            "fallback_asset": "banner-sea-1.jpg"
+          }
+        },
+        "slide3": {
+          "type": "slide",
+          "settings": {
+            "label": "Premium Packaging",
+            "fallback_asset": "banner-sea-2.jpg"
+          }
+        }
+      },
+      "block_order": ["slide1", "slide2", "slide3"],
+      "settings": {
+        "show_trust_bar": true,
+        "eyebrow": "Premium Hair Ritual",
+        "brand_title": "Silky Nest",
+        "headline": "Your hair's secret treasure",
+        "description": "A luxurious blend of natural herbs, seeds, and premium oils — crafted to nourish the scalp, reduce hair fall, and restore soft, luminous shine.",
+        "button_label": "Shop Now",
+        "button_link": "#shop",
+        "secondary_label": "See the ritual",
+        "secondary_link": "#categories"
+      }
+    },
+    "featured": {
+      "type": "featured-product",
+      "settings": {
+        "eyebrow": "The Collection",
+        "heading": "One ritual. Transformed hair.",
+        "lead": "Silky Nest Hair Oil is our signature formula — a single, focused product designed for deeper nourishment and lasting shine."
+      }
+    },
+    "categories": {
+      "type": "category-banners",
+      "blocks": {
+        "c1": {
+          "type": "category",
+          "settings": {
+            "title": "Stimulates Growth",
+            "text": "Amla, rosemary & herbs for fuller-looking hair.",
+            "fallback_asset": "category-growth.jpg"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "title": "Reduces Hair Fall",
+            "text": "Coconut, almond & seeds to fortify strands.",
+            "fallback_asset": "category-hairfall.jpg"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "title": "Adds Shine & Softness",
+            "text": "Golden oils for soft, luminous finish.",
+            "fallback_asset": "category-shine.jpg"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "eyebrow": "Shop by need",
+        "heading": "Three ways Silky Nest works",
+        "lead": "Sea-fresh botanicals for growth, less hair fall, and lasting shine."
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "leaf", "title": "Natural Ingredients", "text": "Made with premium herbal oils for healthy, nourished hair." } },
+        "b2": { "type": "benefit", "settings": { "icon": "shield", "title": "Reduces Hair Fall", "text": "Helps strengthen roots and minimize breakage with regular use." } },
+        "b3": { "type": "benefit", "settings": { "icon": "drop", "title": "Deep Nourishment", "text": "Hydrates the scalp and restores dry, damaged-looking hair." } },
+        "b4": { "type": "benefit", "settings": { "icon": "shine", "title": "Natural Shine", "text": "Leaves hair visibly glossy, soft, and beautifully manageable." } },
+        "b5": { "type": "benefit", "settings": { "icon": "check", "title": "All Hair Types", "text": "Gentle enough for men and women — straight, wavy, curly, or treated." } },
+        "b6": { "type": "benefit", "settings": { "icon": "leaf", "title": "Non-Sticky Feel", "text": "A refined formula that absorbs beautifully without heavy residue." } },
+        "i1": { "type": "ingredient", "settings": { "title": "Botanical Herbs", "text": "A carefully balanced herbal blend that supports scalp comfort and hair vitality." } },
+        "i2": { "type": "ingredient", "settings": { "title": "Nourishing Seeds", "text": "Seed oils rich in nutrients that help restore softness and resilience." } },
+        "i3": { "type": "ingredient", "settings": { "title": "Premium Oils", "text": "A luxurious oil base designed to hydrate deeply and enhance natural shine." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "i1", "i2", "i3"],
+      "settings": {
+        "eyebrow": "Why Customers Love It",
+        "heading": "Crafted for healthier, stronger, shinier hair",
+        "lead": "Discover why thousands are switching to Silky Nest Hair Oil for visibly softer, fuller-looking hair.",
+        "ingredients_heading": "Botanicals in every drop",
+        "show_compare": true
+      }
+    },
+    "how_to_use": {
+      "type": "how-to-use",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Massage in",
+            "text": "Warm a small amount of Silky Nest Hair Oil between your palms and massage into the scalp with gentle circular motions."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Let it nourish",
+            "text": "Leave it on for at least 1–2 hours, or overnight for deeper nourishment and restoration."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Rinse & glow",
+            "text": "Wash out with a mild shampoo. Repeat 2–3 times a week for softer, stronger, shinier hair."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "eyebrow": "The Ritual",
+        "heading": "How to use Silky Nest",
+        "lead": "A simple weekly ritual for softer, stronger, healthier-looking hair.",
+        "note": "For best results, use 2–3 times a week. Suitable for all hair types."
+      }
+    },
+    "lifestyle": {
+      "type": "lifestyle-gallery",
+      "blocks": {
+        "g1": { "type": "image", "settings": { "caption": "The bottle", "fallback_asset": "silky-nest-front.jpg" } },
+        "g2": { "type": "image", "settings": { "caption": "Packaging", "fallback_asset": "silky-nest-packaging.jpg" } },
+        "g3": { "type": "image", "settings": { "caption": "The ritual", "fallback_asset": "silky-nest-ingredients-lifestyle.jpg" } }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "eyebrow": "In Frame",
+        "heading": "Beauty, distilled",
+        "lead": "Premium product and lifestyle photography that captures the softness, shine, and ritual of Silky Nest."
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "quote": "After using Silky Nest Hair Oil consistently, my hair feels much softer and healthier. I also noticed less hair fall while combing.",
+            "name": "Ayesha",
+            "location": "Lahore",
+            "rating": 5
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "quote": "I was worried about hair thinning, but this oil made my hair look fuller and shinier. The fragrance is also very pleasant.",
+            "name": "Fatima",
+            "location": "Karachi",
+            "rating": 5
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "quote": "I've tried many oils before, but this one doesn't feel overly greasy. My scalp feels nourished after every use.",
+            "name": "Sana",
+            "location": "Islamabad",
+            "rating": 5
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "quote": "Within a few weeks my hair became much easier to manage and looked healthier. Highly recommended.",
+            "name": "Hira",
+            "location": "Rawalpindi",
+            "rating": 5
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "quote": "I love that it's made with natural ingredients. My hair feels stronger and has a beautiful shine.",
+            "name": "Mahnoor",
+            "location": "Faisalabad",
+            "rating": 5
+          }
+        },
+        "r6": {
+          "type": "review",
+          "settings": {
+            "quote": "The packaging is premium and the oil absorbs nicely. My hair doesn't feel dry anymore.",
+            "name": "Iqra",
+            "location": "Multan",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {
+        "eyebrow": "Real Stories",
+        "heading": "Loved across Pakistan",
+        "lead": "Real words from customers who made Silky Nest part of their weekly hair ritual.",
+        "score_label": "4.9 / 5",
+        "score_text": "Average customer rating"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "f1": {
+          "type": "question",
+          "settings": {
+            "question": "How do I use Silky Nest Hair Oil?",
+            "answer": "Massage a small amount of Silky Nest Hair Oil into your scalp using your fingertips. Leave it on for at least 1–2 hours or overnight for deeper nourishment, then wash it out with a mild shampoo. For best results, use 2–3 times a week."
+          }
+        },
+        "f2": {
+          "type": "question",
+          "settings": {
+            "question": "Is Silky Nest Hair Oil suitable for everyone?",
+            "answer": "Yes. Silky Nest Hair Oil is suitable for both men and women and can be used on all hair types, including straight, wavy, curly, and chemically treated hair."
+          }
+        },
+        "f3": {
+          "type": "question",
+          "settings": {
+            "question": "Will it make my hair greasy?",
+            "answer": "Silky Nest is formulated to nourish without a heavy, sticky feel. Use a modest amount and wash as directed for soft, manageable results."
+          }
+        },
+        "f4": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer Cash on Delivery?",
+            "answer": "Yes. Cash on Delivery is available across Pakistan for a convenient, secure checkout experience."
+          }
+        },
+        "f5": {
+          "type": "question",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "If you have any questions about your order or the product, our customer support team is ready to assist you through the contact details on our website."
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5"],
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Frequently asked questions",
+        "lead": "Everything you need to know about Silky Nest Hair Oil.",
+        "open_first": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "categories",
+    "how_to_use",
+    "reviews",
+    "faq"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "current": {
+    "color_background": "#FFFEFC",
+    "color_text": "#161412",
+    "color_gold": "#D4B45A",
+    "color_gold_hover": "#C4A14A",
+    "color_muted": "#6F6A63",
+    "color_soft": "#F7F4EE",
+    "logo_width": 140,
+    "enable_sticky_atc": true,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "Free Cash on Delivery across Pakistan Â· Limited offer: Rs.1,500",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "show_newsletter": false
+        }
+      },
+      "sticky-atc": {
+        "type": "sticky-atc",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

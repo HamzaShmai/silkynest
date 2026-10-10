@@ -1,0 +1,145 @@
+<section class="section category-banners" id="categories">
+  <div class="container">
+    <div class="section__header section__header--center reveal">
+      <p class="section__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section__title section__title--center">{{ section.settings.heading }}</h2>
+      {%- if section.settings.lead != blank -%}
+        <p class="section__lead section__lead--center">{{ section.settings.lead }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="category-banners__grid">
+      {%- for block in section.blocks -%}
+        <a
+          href="{{ block.settings.link | default: '#shop' }}"
+          class="category-banner reveal"
+          {{ block.shopify_attributes }}
+        >
+          <div class="category-banner__media">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1600
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '600, 900, 1200, 1600',
+                  sizes: '(min-width: 980px) 33vw, 100vw',
+                  alt: block.settings.title
+              }}
+            {%- else -%}
+              {%- assign asset = block.settings.fallback_asset | default: 'category-growth.jpg' -%}
+              <img
+                src="{{ asset | asset_url }}"
+                alt="{{ block.settings.title | escape }}"
+                width="1600"
+                height="900"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </div>
+          <div class="category-banner__copy">
+            <h3 class="category-banner__title">{{ block.settings.title }}</h3>
+            {%- if block.settings.text != blank -%}
+              <p class="category-banner__text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category banners",
+  "tag": "section",
+  "class": "section-category-banners",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Shop by need"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Three ways Silky Nest works"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Sea-fresh botanicals for growth, less hair fall, and lasting shine."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback asset filename",
+          "default": "category-growth.jpg"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Stimulates Growth"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Short text",
+          "default": "Nourish the scalp and support stronger-looking hair."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category banners",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Stimulates Growth",
+            "text": "Amla, rosemary & herbs for fuller-looking hair.",
+            "fallback_asset": "category-growth.jpg"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Reduces Hair Fall",
+            "text": "Coconut, almond & seeds to fortify strands.",
+            "fallback_asset": "category-hairfall.jpg"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Adds Shine & Softness",
+            "text": "Golden oils for soft, luminous finish.",
+            "fallback_asset": "category-shine.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

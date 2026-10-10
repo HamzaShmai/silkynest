@@ -1,0 +1,25 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Stay Close",
+        "heading": "Join the nest",
+        "lead": "Be first to know about restocks, rituals, and exclusive offers.",
+        "placeholder": "Enter your email",
+        "button_label": "Subscribe",
+        "success_message": "Thank you for joining Silky Nest."
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "brand": "Silky Nest",
+        "about": "Silky Nest Hair Oil — a luxurious natural ritual crafted to nourish the scalp, reduce hair fall, and restore soft, luminous shine."
+      }
+    }
+  },
+  "order": ["newsletter", "footer"]
+}

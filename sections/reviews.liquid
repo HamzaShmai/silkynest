@@ -1,0 +1,211 @@
+<section class="section section--soft reviews" id="reviews" data-reviews>
+  <div class="container">
+    <div class="reviews-shell reveal">
+      <aside class="reviews-aside">
+        <p class="section__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="section__title">{{ section.settings.heading }}</h2>
+        <p class="section__lead">{{ section.settings.lead }}</p>
+
+        <div class="reviews-score">
+          <div class="reviews-score__stars" aria-hidden="true">★★★★★</div>
+          <strong>{{ section.settings.score_label }}</strong>
+          <span>{{ section.settings.score_text }}</span>
+        </div>
+
+        <div class="reviews-nav">
+          <button type="button" class="reviews-nav__btn" data-review-prev aria-label="Previous review">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <span class="reviews-nav__count" data-review-count>01 / {% if section.blocks.size < 10 %}0{% endif %}{{ section.blocks.size }}</span>
+          <button type="button" class="reviews-nav__btn" data-review-next aria-label="Next review">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <div class="reviews-stage">
+        <div class="reviews-stage__mark" aria-hidden="true">“</div>
+        <div class="reviews-slider" data-review-slider>
+          {%- for block in section.blocks -%}
+            <article
+              class="reviews-slide{% if forloop.first %} is-active{% endif %}"
+              data-review-slide
+              {{ block.shopify_attributes }}
+              {% unless forloop.first %}hidden{% endunless %}
+            >
+              <div class="reviews-slide__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+                {%- assign rating = block.settings.rating | default: 5 -%}
+                {%- for i in (1..5) -%}
+                  {%- if i <= rating -%}★{%- else -%}☆{%- endif -%}
+                {%- endfor -%}
+              </div>
+              <blockquote class="reviews-slide__quote">{{ block.settings.quote }}</blockquote>
+              <div class="reviews-slide__author">
+                <strong>{{ block.settings.name }}</strong>
+                <span>{{ block.settings.location }}</span>
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+
+        <div class="reviews-cities" aria-label="Customer cities">
+          {%- for block in section.blocks -%}
+            <button
+              type="button"
+              class="reviews-cities__item{% if forloop.first %} is-active{% endif %}"
+              data-review-dot
+              aria-label="Show review from {{ block.settings.name }}"
+            >
+              {{ block.settings.location }}
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee__item reveal">
+        <h3>100% Natural</h3>
+        <p>Premium herbal oils for healthier-looking hair.</p>
+      </div>
+      <div class="guarantee__item reveal">
+        <h3>Fast Delivery</h3>
+        <p>Cash on Delivery available all over Pakistan.</p>
+      </div>
+      <div class="guarantee__item reveal">
+        <h3>Secure Checkout</h3>
+        <p>Your payment and personal information are protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "tag": "section",
+  "class": "section-reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Real Stories"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Loved across Pakistan"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Real words from customers who made Silky Nest part of their weekly hair ritual."
+    },
+    {
+      "type": "text",
+      "id": "score_label",
+      "label": "Score label",
+      "default": "4.9 / 5"
+    },
+    {
+      "type": "text",
+      "id": "score_text",
+      "label": "Score text",
+      "default": "Average customer rating"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "My hair feels much softer and healthier. I also noticed less hair fall while combing."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Ayesha"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Lahore"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "After using Silky Nest Hair Oil consistently, my hair feels much softer and healthier. I also noticed less hair fall while combing.",
+            "name": "Ayesha",
+            "location": "Lahore"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I was worried about hair thinning, but this oil made my hair look fuller and shinier. The fragrance is also very pleasant.",
+            "name": "Fatima",
+            "location": "Karachi"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I've tried many oils before, but this one doesn't feel overly greasy. My scalp feels nourished after every use.",
+            "name": "Sana",
+            "location": "Islamabad"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Within a few weeks my hair became much easier to manage and looked healthier. Highly recommended.",
+            "name": "Hira",
+            "location": "Rawalpindi"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I love that it's made with natural ingredients. My hair feels stronger and has a beautiful shine.",
+            "name": "Mahnoor",
+            "location": "Faisalabad"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "The packaging is premium and the oil absorbs nicely. My hair doesn't feel dry anymore.",
+            "name": "Iqra",
+            "location": "Multan"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
